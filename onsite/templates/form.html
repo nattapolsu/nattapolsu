@@ -1,0 +1,160 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Form</title>
+{% endblock %}
+
+{% block content %}
+<div class="container bg-light mt-3 p-3 shadow rounded-3">
+    <div class="alert alert-secondary" role="alert">
+        <h1>Request For Quote</h1>
+        <h1>(In-house training)</h1>
+        <p>EMAIL TO: iso.th@outlook.com</p>
+        <p>Line ID: isoconsult</p>
+        <p>Quality Associates Ltd. (00000)
+            80/8 Samwa Road, Bangchan, Khlongsamwa, Bangkok 10510
+            TID 0115550004576</p>
+    </div>
+    <!-- container -->
+    <div class="container bg-light mt-3">
+        <form action="" method="POST" class="row g-3">
+            {% csrf_token %}
+            <div class="col-12">
+                <div class="form-label"><b>Issue To:</b></div>
+                <div class="form-label">Company</div>
+                <input type="text" class="form-control" name="company">
+            </div>
+            <div class="col-12">
+                <div class="form-label">Address: </div>
+                <input type="text" class="form-control" name="address">
+            </div>
+            <div class="col-6">
+                <div class="form-label">Contact: </div>
+                <input type="text" class="form-control" name="contact">
+            </div>
+            <div class="col-6">
+                <div class="form-label">Position:</div>
+                <input type="text" class="form-control" name="position">
+            </div>
+            <div class="col-4">
+                <div class="form-label">Phone:</div>
+                <input type="text" class="form-control" name="phone">
+            </div>
+            <div class="col-md-4">
+                <div class="form-label">Email:</div>
+                <input type="text" class="form-control" name="cusemail">
+            </div>
+            <div class="col-4">
+                <div class="form-label">Fax:</div>
+                <input type="text" class="form-control" name="fax">
+            </div>
+
+            <div class="col-12">
+                <div class="form-label"><b>Billing to:</b></div>
+                <div class="form-label">ออกใบเสร็จรับเงินให้</div>
+            </div>
+            <div class="col-12">
+                <div class="form-label"><b>Company: </b></div>
+                <input type="text" class="form-control" name="con-company">
+            </div>
+            <div class="col-12">
+                <div class="form-label">Address: </div>
+                <input type="text" class="form-control" name="con-address">
+            </div>
+            <div class="col-4">
+                <div class="form-label">Tax ID: </div>
+                <input type="text" class="form-control" name="numtax">
+            </div>
+            <div class="col-4">
+                <div class="form-label">Contact: </div>
+                <input type="text" class="form-control" name="con-contact">
+            </div>
+            <div class="col-4">
+                <div class="form-label">Title: </div>
+                <input type="text" class="form-control" name="title">
+            </div>
+            <div class="col-4">
+                <div class="form-label">Phone:</div>
+                <input type="text" class="form-control" name="con-phone">
+            </div>
+            <div class="col-md-4">
+                <div class="form-label">Email:</div>
+                <input type="text" class="form-control" name="con-cusemail">
+            </div>
+            <div class="col-4 mb-3">
+                <div class="form-label">Fax:</div>
+                <input type="text" class="form-control" name="con-fax">
+            </div>
+
+            <div class="col-12">
+                <div class="form-label"><b>Request for training course : </b></div>
+                <div class="form-label">ระบุหลักสูตรที่ต้องการ</div>
+                <input type="text" class="form-control" name="req-train-course">
+            </div>
+            <div class="col-md-6">
+                <div class="form-label">The number of participants: </div>
+                <input type="text" class="form-control" name="nun-partic">
+            </div>
+            <div class="col-md-6">
+                <div class="form-label">Required date of training: </div>
+                <input type="date" class="form-control" name="date-train">
+            </div>
+
+            <!-- เพิ่มคอร์ส -->
+            <div class="col-12">
+                <div class="form-label"><b>Request for other courses </b> ระบุหลักสูตรอื่นๆ (หากมี):</div>
+            </div>
+
+            <div class="col-1">
+                <input type="checkbox" class="form-check-input" name="checkadd1">
+            </div>
+            <div class="col-6">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Couse 1</label>
+                    </div>
+                    <select class="custom-select" id="inputGroupSelect01" name="addcouse1">
+                        <option selected>no select</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="form-label">Required date:</div>
+            </div>
+            <div class="col-3">
+                <input type="date" class="form-control" name="adddate1">
+            </div>
+
+            <div class="col-1">
+                <input type="checkbox" class="form-check-input" name="checkadd2">
+            </div>
+            <div class="col-6">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Couse 2</label>
+                    </div>
+                    <select class="custom-select" id="inputGroupSelect01" name="addcouse2">
+                        <option selected>no select</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="form-label">Required date:</div>
+            </div>
+            <div class="col-3">
+                <input type="date" class="form-control" name="adddate2">
+            </div>
+
+            <div class="col-12 mt-3">
+                <input type="submit" class="btn btn-primary" value="ตกลง">
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

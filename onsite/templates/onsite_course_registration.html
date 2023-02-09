@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block title %} <title> RegistrationCourse </title>{% endblock %}
+
+{% block content %}
+<div class="container mt-4 mb-5">
+  <h2 class="text-center">Registration Course</h2>
+
+  <table class="table table-dark table-striped">
+    <thead>
+      <tr>
+        <th scope="col">ลำดับ</th>
+        <th scope="col">บริษัท</th>
+        <th scope="col">ทีอยู่</th>
+        <th scope="col">สถานที่</th>
+        <th scope="col">อีเมล</th>
+        <th scope="col">เวลานัด</th>
+        <th scope="col">แก้ไข</th>
+        <th scope="col">ลบ</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for contact in all_contact %}
+      <tr>
+        <th scope="row">{{contact.id}}</th>
+        <td>{{contact.company}}</td>
+        <td>{{contact.address}}</td>
+        <td>{{contact.position}}</td>
+        <td>{{contact.cusemail}}</td>
+        <td>{{contact.date}}</td>
+        <td><a href="{% url 'contactEdit' contact.id %}" class="btn btn-warning">แก้ไข</a></td>
+        <td><a href="contactDelete/{{contact.id}}" class="btn btn-danger" onclick="return confirm('คุณต้องการลบ {{contact.cusemail}} หรือไม่')">ลบ</a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}
