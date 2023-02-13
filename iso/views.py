@@ -3,10 +3,10 @@ from django.contrib.auth.models import User
 # Create your views here.
 
 def HomePage(request):
-    return render(request,"home.html")
+    return render(request,"iso/home.html")
 
 def NewsBlog(request):
-    return render(request,"blog.html")
+    return render(request,"iso/blog.html")
 
 def Register(request):
     if request.method == 'POST':
@@ -25,4 +25,4 @@ def Register(request):
         newuser.save()
         return redirect('login')
 
-    return render(request, 'register.html')
+    return render(request, 'iso/register.html')
